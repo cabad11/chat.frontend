@@ -16,7 +16,7 @@ class App extends React.Component {
     submit (e) {
         e.preventDefault();
         if (this.refs.name.checkValidity()) {
-            this.socket.send({
+            this.socket.emit('initUser',{
                 name: this.refs.name.value
             });
             this.setState(Object.assign(this.state, {
